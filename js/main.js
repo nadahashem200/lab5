@@ -20,7 +20,7 @@ let paradeContainer;
 let songContainer;
 
 
-//iitializing both parade and song players and setting the default player to match html structure
+//calling both parade and song players and setting the default player to match html structure
 function onYouTubeIframeAPIReady() {
     
     // Song Player
@@ -104,5 +104,26 @@ function init() {
     });
 }
 
+//controls
+
+ff.addEventListener("click", (e) => {
+    currentPlayer.setPlaybackRate = 2;
+});
+
+slo.addEventListener("click", (e) => {
+    currentPlayer.setPlaybackRate = 0.5;
+});
+
+normal.addEventListener("click", (e) => {
+    currentPlayer.setPlaybackRate = 1;
+});
+
+rewind.addEventListener("click", (e) => {
+    currentPlayer.setPlaybackRate = -1;
+});
+
+ff
+slow
+normal
 
 
