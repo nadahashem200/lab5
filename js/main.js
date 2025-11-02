@@ -1,43 +1,75 @@
 
-import { cueTimer } from "./modules/cuepoints.js";
+  
 
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener("DOMContentLoaded", init);
 
-    var myCues = [
-        { seconds: 2, callback: func1 },
-        { seconds: 9, callback: func2 },
-        { seconds: 15, callback: func3 }
-    ];
+function init() {
 
-    //this activates the cuepoints module.
-    // Pass it the ID of the video to watch
-    // and the array of cuepoint objects.
-    cueTimer.setup("vid", myCues);
+    const song = document.getelementbyid("reverence-isis");
+    const parade= document.getelementbyid("golden-parade");
 
-    //shortcut variables
-    const vid = document.querySelector("#vid");
-    const selectList = document.querySelector("#video_select");
+    
+    const rewind = document.getElementById("rw");
+    const ff = document.getElementById("ff");
+    const slo = document.getElementById("slo");
+    const normal = document.getElementById("normal");
+    const select = document.getElementById("video-select");
 
-    // make the select list control what video format to play
-    selectList.addEventListener("change", (e) => {
-        selectVideo(e, vid);
+}
+
+
+
+
+
+
+
+    /**
+     * prepare the audio and video for playing
+    
+
+
+
+    select.addEventListener("change", (e) => {
+        select(e, vd);
     });
 
-});
+    /**
+     * prepare the audio and video for playing
+     
+    video.src = "videos/amiraselim-egypt.webm";
+    video.load();
+    video.volume = 0.5;
 
+    //set video's initial volume
+    leverage.volume = 0.5;
 
-
-//the custom callback functions to trigger when a cuepoint is hit.
-//You can code up whatever behavior you need in your own callbacks
-//feel free to rename the functions to be more descriptive of what they do.
-function func1() {
-
-}
-
-function func2() {
+    /**
+     * create the button event listeners to control the audio
     
-}
 
-function func3() {
+    ff.addEventListener("click", (e) => {
+        lowRider.playbackRate = 2;
+    });
 
-}
+    slo.addEventListener("click", (e) => {
+        lowRider.playbackRate = 0.5;
+    });
+
+    normal.addEventListener("click", (e) => {
+        lowRider.playbackRate = 1;
+    });
+
+    /**
+     * select lists emit a "change" event when the choice is changed
+    
+    pick.addEventListener("change", (e) => {
+        // save the audio's current place in the song.
+        let time = lowRider.currentTime;
+
+        lowRider.src = e.target.value;
+        lowRider.load();
+        lowRider.play();
+
+        // set the new song to the same place as the previous one.
+        lowRider.currentTime = time;
+    }); */
