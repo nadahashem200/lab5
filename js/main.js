@@ -9,7 +9,7 @@ function init() {
     const songContainer= document.getElementById("reverence-isis");
     const paradeContainer= document.getElementById("golden-parade");
 
-    const song = document.getElementsById("song-iframe");
+    const song = document.getElementById("song-iframe");
     const parade= document.getElementById("parade-iframe");
  
     const rewind = document.getElementById("rw");
@@ -29,3 +29,4 @@ function init() {
               paradeContainer.style.display= 'block';
         }  
     });
+}
