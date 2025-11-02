@@ -14,11 +14,33 @@ let currentPlayer;
 //for fallback
 let songFallback;
 let paradeFallback;
-
 let noErrorParade;
 let noErrorSong;
 let paradeContainer;
 let songContainer;
+
+
+//iitializing both parade and song players and setting the default player to match html structure
+function onYouTubeIframeAPIReady() {
+    
+    // Song Player
+    songPlayer = new YT.Player('song-iframe', {
+        events: {
+            'onError': onPlayerError 
+        }
+    });
+
+    // Parade Player
+    paradePlayer = new YT.Player('parade-iframe', {
+        events: {
+            'onError': onPlayerError 
+        }
+    });
+    
+    // Setting the default player
+    currentPlayer = songPlayer; 
+}
+
 
 // get fallback texts to work in case of an error
 function onPlayerError (e) {
@@ -35,6 +57,8 @@ function onPlayerError (e) {
     };
 }
 
+
+//start of local functions and variables
 function init() {
     
 
