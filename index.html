@@ -11,30 +11,34 @@
     <link rel="stylesheet" href="css/styles.css">
    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/main.js" defer></script>
 
     </head>
 
     <body>
 <header>
-    <h1>
+
+        <h1>
         Reverence for Isis
-       </h1>
+        </h1>
+
        <h2>
        From The Golden Parade of Ancient Egyptian Royalty
        </h2>
+
 </header>
 
 <main id="container">
 
-    <video id="vid" width="352" controls>
+    <video id="vid" controls>
        <source src="videos/amiraselim-egypt.webm" type="video/webm">
        <source src="videos/amiraselim-egypt.mp4" type="video/mp4">
        <!--<track kind="captions" label="On" srclang="en" src="./captions/synergy.vtt" default> -->
 
       <!-- Fall back text- lyrics -->
       
-       
+      <h3>Reverence for Isis — Lyrics</h3>
+
        <p>
         O people and gods above
 
@@ -62,13 +66,57 @@
         
         Reverence for thee
     </p>
+
        </video> 
 
- <p class="video-caption">
-    The Hieroglyphic song performed at the Golden Parade of ancient Egyptian r
-    oyalty
- </p>
- 
+       <p class="video-caption">
+        The Hieroglyphic song performed at the Golden Parade of ancient Egyptian royalty in 2021.
+     </p>
+     
+       <div id="controls">
+        <form id="video_form">
+            <fieldset>
+                <input type="button" id="play-button" onclick="" value="Play">
+                <input type="button" id="pause-button" onclick="" value="Pause">
+                <input type="button" id="mute" onclick="" value="Mute">
+                <input type="button" id="unmute" onclick="" value="Unmute">
+                <input type="button" id="rewind" onclick="" value="Beginning">
+                <input type="button" id="end" onclick="" value="End" >
+            </fieldset>
+
+            <fieldset>
+
+                <label>
+                    <input type=button id="rw" onclick="" value="&lt; &lt;rewind">
+                </label>
+
+                <input type=button id="ff" onclick="" value="fast forward >>">
+                <input type=button id="slo" onclick="" value="slo mo">
+                <input type=button id="normal" onclick="" value="normal">
+
+            </fieldset>
+
+
+            <fieldset>
+
+                <select id="video-select">
+                    <option>Select a video to play...</option>
+                    <option value="videos/amiraselim-egypt.mp4">song(mp4)</option>
+                    <option value="videos/amiraselim-egypt.webm">song(webm)</option>
+                </select>
+
+            </fieldset>
+
+        </form>
+    </div>
+
+</section>
+
  </main>
+<footer>
+    This page was created as part of a course project for Mount Diablo College.  
+    It is a fictional work and not intended to represent any real event, person, or organization.
+</footer>
+
 </body>
 </html>
