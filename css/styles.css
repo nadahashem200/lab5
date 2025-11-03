@@ -49,12 +49,32 @@ iframe{
 }
 
 
-#play-button, #pause-button,  #mute, #unmute, #rewind, #video-select,  #rw,  #end, #ff, #slo, #normal{
+ #video-select,  #rw,  #end, #ff, #slo, #normal{
   background-color: rgb(14, 14, 14);
   color: rgb(249, 249, 249);
   font-size: 20px;
   padding: 1em 3em;
   margin: .5em;
+}
+#video-select:hover,  
+#rw:hover,  
+#end:hover, 
+#ff:hover, 
+#slo:hover, 
+#normal:hover {
+    background-color: rgb(213, 213, 213);
+    color: rgb(14, 14, 14);
+}
+
+
+#video-select:active, #video-select:focus,
+#rw:active, #rw:focus,
+#end:active, #end:focus, 
+#ff:active, #ff:focus, 
+#slo:active, #slo:focus, 
+#normal:active, #normal:focus {
+    background-color: rgb(207, 152, 86);
+    color: rgb(0, 0, 0);
 }
 
 footer{
