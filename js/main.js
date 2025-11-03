@@ -1,5 +1,4 @@
 
-  
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -10,6 +9,10 @@ let paradePlayer;
 
 //for controls
 let currentPlayer; 
+let ff;
+let slo;
+let normal;
+let select;
 
 //for fallback
 let songFallback;
@@ -40,7 +43,7 @@ function onYouTubeIframeAPIReady() {
     // Setting the default player
     currentPlayer = songPlayer; 
 }
-
+    
 
 // get fallback texts to work in case of an error
 function onPlayerError (e) {
@@ -66,11 +69,10 @@ function init() {
     const song = document.getElementById("song-iframe");
     const parade= document.getElementById("parade-iframe");
  
-    const rewind = document.getElementById("rw");
-    const ff = document.getElementById("ff");
-    const slo = document.getElementById("slo");
-    const normal = document.getElementById("normal");
-    const select = document.getElementById("video-select");
+    ff = document.getElementById("ff");
+    slo = document.getElementById("slo");
+    normal = document.getElementById("normal");
+    select = document.getElementById("video-select");
 
 //assigning values to global variables
 
@@ -85,45 +87,36 @@ function init() {
 
     //assigning value to the global fallback variables 
     songFallback = document.querySelector('.fallback-song');
-    paradeFallback = document.querySelector('.fallback-parade');
+    paradeFallback = document.querySelector('.fallback-parade');   
 
 
 //Functions
 
 
 //select a video
-    select.addEventListener('change', function() {
-        if (this.value === 'reverence-isis') {
-        songContainer.style.display = 'block';
-        paradeContainer.style.display= 'none';
-        }
+select.addEventListener('change', function() {
+    if (this.value === 'reverence-isis') {
+    songContainer.style.display = 'block';
+    paradeContainer.style.display= 'none';
+    }
 
-        else {songContainer.style.display = 'none';
-              paradeContainer.style.display= 'block';
-        }  
-    });
-}
+    else { songContainer.style.display = 'none';
+           paradeContainer.style.display= 'block';
+    }      
+});
 
 //controls
 
 ff.addEventListener("click", (e) => {
-    currentPlayer.setPlaybackRate = 2;
+currentPlayer.setPlaybackRate(2);
 });
 
 slo.addEventListener("click", (e) => {
-    currentPlayer.setPlaybackRate = 0.5;
+currentPlayer.setPlaybackRate(0.5);
 });
 
 normal.addEventListener("click", (e) => {
-    currentPlayer.setPlaybackRate = 1;
+currentPlayer.setPlaybackRate(1);
+
 });
-
-rewind.addEventListener("click", (e) => {
-    currentPlayer.setPlaybackRate = -1;
-});
-
-ff
-slow
-normal
-
-
+}
