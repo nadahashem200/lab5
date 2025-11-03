@@ -41,7 +41,6 @@ function onYouTubeIframeAPIReady() {
     });
     
     // Setting the default player
-    currentPlayer = songPlayer; 
 }
     
 
@@ -96,11 +95,13 @@ function init() {
 //select a video
 select.addEventListener('change', function() {
     if (this.value === 'reverence-isis') {
-    songContainer.style.display = 'block';
-    paradeContainer.style.display= 'none';
+        currentPlayer = songPlayer; 
+        songContainer.style.display = 'block';
+        paradeContainer.style.display= 'none';
     }
 
-    else { songContainer.style.display = 'none';
+    else { currentPlayer = paradePlayer; 
+           songContainer.style.display = 'none';
            paradeContainer.style.display= 'block';
     }      
 });
